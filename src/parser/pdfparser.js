@@ -362,7 +362,7 @@ export default class PdfBlockParser {
                 Helpers.getOrdinal(monsterDescription.level);
             monsterDescription.type = strengthMatch.groups.type.toLowerCase();
             monsterDescription.role = strengthMatch.groups.role.toLowerCase();
-            if (strengthMatch.groups.mook) {
+            if (strengthMatch.groups.mook || monsterDescription.strength === "mook") {
                 monsterDescription.mook = "yes";
             }
             if (strengthMatch.groups.size) {

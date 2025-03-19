@@ -4,7 +4,7 @@ export default class ParsingRegexes {
 	}
 
 	static get strengthLine2eRegex() {
-		return /((?<ordinal>(?<level>\d+)\s*(st|nd|rd|th))) level (?<strength>(double|triple)-strength)? ?(?<mook>mook )?(?<role>\S+) \[ ?(?<size>tiny|small|large|huge)? ?(?<type>\S+) ?]/i;
+		return /((?<ordinal>(?<level>\d+)\s*(st|nd|rd|th))) level (?<strength>(double|triple)-strength|elite|weakling|(?<mook>mook))? ?(?<role>\S+) \[ ?(?<size>tiny|small|large|huge)? ?(?<type>\S+) ?]/i;
 	}
 
 	static get htmlStrengthLineRegex() {

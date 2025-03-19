@@ -12,6 +12,7 @@ export default class MonsterStatBlock {
     #initiative = "";
     #vulnerability = "";
     #source = "";
+    #mook = "";
 
     /**
      * @type {Attack[]}
@@ -45,6 +46,7 @@ export default class MonsterStatBlock {
         name = null,
         source = null,
         strength = null,
+        mook = null,
         size = null,
         level = null,
         levelOrdinal = null,
@@ -69,6 +71,7 @@ export default class MonsterStatBlock {
         this.#name = name;
         this.#source = source;
         this.#strength = strength;
+        this.#mook = mook;
         this.#size = size;
         this.#level = level;
         this.#levelOrdinal = levelOrdinal;
@@ -114,6 +117,7 @@ export default class MonsterStatBlock {
         this.flavor_text = null;
         this.size = null;
         this.strength = null;
+        this.mook = null;
         this.level = null;
         this.levelOrdinal = null;
         this.role = null;
@@ -140,6 +144,9 @@ export default class MonsterStatBlock {
         }
         if (!Helpers.isEmpty(other.strength)) {
             this.#strength = other.strength;
+        }
+        if (!Helpers.isEmpty(other.mook)) {
+            this.#mook = other.mook;
         }
         if (!Helpers.isEmpty(other.level)) {
             this.#level = other.level;
@@ -212,6 +219,7 @@ export default class MonsterStatBlock {
         const desc = {
             name: this.name,
             strength: this.strength,
+            mook: this.mook,
             level: this.level,
             levelOrdinal: this.levelOrdinal,
             role: this.role,
@@ -273,6 +281,14 @@ export default class MonsterStatBlock {
 
     set strength(value) {
         this.#strength = value;
+    }
+
+    get mook() {
+        return this.#mook;
+    }
+
+    set mook(value) {
+        this.#mook = value;
     }
 
     get level() {
